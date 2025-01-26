@@ -1,0 +1,198 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>$report_title$ - www.boomworks.org</title>
+</head>
+<body>
+
+<table nosave=""  border="0" cellspacing="0" cellpadding="0" width="100%"><tbody><tr nosave="">
+    <td colspan="2" rowspan="2" nosave=""><font size="5" color="#336666"><b>$report_title$</b></font></td>
+    <td align="right"><font face="tahoma" size=2 color="#336666">$latest_version$</font><br><font face="tahoma" size=2 color="#336666">$your_version$</font></td>
+</tr></tbody></table>
+
+<hr>
+
+<!-- // -->
+<font size="4" color="#336666"><b>Directories and types</b></font><br>
+<font face="tahoma" size="3" color="#336666">$str_counting_dirs$</font><br>
+<font face="tahoma" size="3" color="#336666">$str_counting_exts$</font>
+
+<p></p>
+
+<!-- // -->
+<font size="4" color="#336666"><b>File quantity and size</b></font><br>
+<font face="tahoma" size="3" color="#336666">Total: $n_files$ files, </font><font face="tahoma" size="3" color="#336666">$n_size$ bytes</font>
+<p></p>
+
+<!-- // -->
+<font size="4" color="#336666"><b>Lines by type</b></font><br>
+
+<font face="tahoma" size=2>
+    <table border="1" cellspacing="0" cols="8" width=100%>
+
+        <tr bgcolor="#e4eecc">
+            <th align="left" width="12%">Type</th><th width="12%">Files</th>
+            <th width="16%">Size</th><th width="12%">Lines</th>
+            <th width="12%">Code</th><th width="12%">Code//Comm</th>
+            <th width="12%">Comm</th><th width="12%">Blank</th>
+        </tr>
+        $str_lines_by_type$
+    </table>
+</font>
+
+<p></p>
+
+<!-- // -->
+<font size="4" color="#336666"><b>Lines</b></font><br>
+<font face="tahoma" size="3" color="#336666">Total: $n_lines$ lines</font>
+
+<font face="tahoma" size=2>
+    <table border="1" cellspacing="0" cols="3" width=100%>
+
+        <tr bgcolor="#e4eecc"><th align="left" width="30%">Type</th><th width="20%">Lines</th><th>Percentage(%)</th></tr>
+
+        <tr><td>Code</td><td align="right">$n_code_lines$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_code_parcentage$"><tr bgcolor="#1a87d5"><td>&nbsp;</td></tr></table>$n_code_parcentage$
+            </td>
+        </tr>
+
+        <tr bgcolor="#eef4e2"><td>Code//Comment</td><td align="right">$n_code_comm_lines$</td>
+        <td>
+            <table border=0 cellspacing="0" cellpadding="0" width="$n_code_comm_parcentage$"><tr bgcolor="#1a87d5"><td>&nbsp;</td></tr></table>$n_code_comm_parcentage$
+        </td>
+        </tr>
+
+        <tr><td>Comment</td><td align="right">$n_comm_lines$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_comm_parcentage$"><tr bgcolor="#62b054"><td>&nbsp;</td></tr></table>$n_comm_parcentage$
+            </td>
+        </tr>
+
+        <tr bgcolor="#eef4e2"><td>Blank</td><td align="right">$n_blank_lines$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_blank_parcentage$"><tr bgcolor="#ed561b"><td>&nbsp;</td></tr></table>$n_blank_parcentage$
+            </td>
+        </tr>
+
+    </table>
+</font>
+
+<p></p>
+
+<!-- // -->
+<font size="4" color="#336666"><b>Test case and defect</b></font><br>
+
+<font face="tahoma" size=2>
+    <table border="1" cellspacing="0" cols="3" width=100%>
+
+        <tr bgcolor="#e4eecc"><th align="left" width="30%">Phase</th><th width="20%">Case&Defect</th><th>Defect / Case(%)</th></tr>
+
+        <tr>
+            <td>Unit Test</td>
+            <td align="right">$n_ut_case$<BR>$n_ut_defect$</td>
+
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_ut_case_parcentage$"><tr bgcolor="#24cbe5"><td>&nbsp;</td></tr></table>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_ut_defect_parcentage_chart$"><tr bgcolor="#ff9655"><td>&nbsp;</td></tr></table>
+                $n_ut_defect_parcentage$
+            </td>
+        </tr>
+
+        <tr bgcolor="#eef4e2">
+            <td>Integration Test</td>
+            <td align="right">$n_it_case$<BR>$n_it_defect$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_it_case_parcentage$"><tr bgcolor="#24cbe5"><td>&nbsp;</td></tr></table>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_it_defect_parcentage_chart$"><tr bgcolor="#ff9655"><td>&nbsp;</td></tr></table>
+                $n_it_defect_parcentage$
+            </td>
+        </tr>
+
+    </table>
+</font>
+
+<p></p>
+
+<!-- // -->
+<font size="4" color="#336666"><b>Cost by phase</b></font><br>
+<font face="tahoma" size="3" color="#336666">Total: $n_total_cost$ $</font>
+
+<font face="tahoma" size=2>
+    <table border="1" cellspacing="0" cols="3" width=100%>
+
+        <tr bgcolor="#e4eecc"><th align="left" width="30%">Phase</th><th width="20%">Cost</th><th>Percentage(%)</th></tr>
+
+        <tr><td>Low Level Design</td><td align="right">$n_cost_lld$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_cost_lld_parcentage$"><tr bgcolor="#64e572"><td>&nbsp;</td></tr></table>$n_cost_lld_parcentage$
+            </td>
+        </tr>
+
+        <tr bgcolor="#eef4e2"><td>Coding</td><td align="right">$n_cost_coding$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_cost_coding_parcentage$"><tr bgcolor="#64e572"><td>&nbsp;</td></tr></table>$n_cost_coding_parcentage$
+            </td>
+        </tr>
+
+        <tr><td>Unit Test</td><td align="right">$n_cost_ut$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_cost_ut_parcentage$"><tr bgcolor="#64e572"><td>&nbsp;</td></tr></table>$n_cost_ut_parcentage$
+            </td>
+        </tr>
+
+        <tr bgcolor="#eef4e2"><td>Integration Test</td><td align="right">$n_cost_it$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_cost_it_parcentage$"><tr bgcolor="#64e572"><td>&nbsp;</td></tr></table>$n_cost_it_parcentage$
+            </td>
+        </tr>
+
+    </table>
+</font>
+
+<p></p>
+
+<font size="4" color="#336666"><b>Man-month by phase</b></font><br>
+<font face="tahoma" size="3" color="#336666">Total: $n_total_mm$ man-month</font>
+
+<font face="tahoma" size=2>
+    <table border="1" cellspacing="0" cols="3" width=100%>
+
+        <tr bgcolor="#e4eecc"><th align="left" width="30%">Phase</th><th width="20%">Man-month</th><th>Percentage(%)</th></tr>
+
+        <tr><td>Low Level Design</td><td align="right">$n_mm_lld$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_mm_lld_parcentage$"><tr bgcolor="#fff263"><td>&nbsp;</td></tr></table>$n_mm_lld_parcentage$
+            </td>
+        </tr>
+
+        <tr bgcolor="#eef4e2"><td>Coding</td><td align="right">$n_mm_coding$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_mm_coding_parcentage$"><tr bgcolor="#fff263"><td>&nbsp;</td></tr></table>$n_mm_coding_parcentage$
+            </td>
+        </tr>
+
+        <tr><td>Unit Test</td><td align="right">$n_mm_ut$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_mm_ut_parcentage$"><tr bgcolor="#fff263"><td>&nbsp;</td></tr></table>$n_mm_ut_parcentage$
+            </td>
+        </tr>
+
+        <tr bgcolor="#eef4e2"><td>Integration Test</td><td align="right">$n_mm_it$</td>
+            <td>
+                <table border=0 cellspacing="0" cellpadding="0" width="$n_mm_it_parcentage$"><tr bgcolor="#fff263"><td>&nbsp;</td></tr></table>$n_mm_it_parcentage$
+            </td>
+        </tr>
+
+    </table>
+</font>
+
+<p></p>
+
+<table nosave="" border="0" cellspacing="0" cellpadding="0" cols="1" width=100%>
+<tr><td><font face="tahoma" size=2>$gen_time$</font><hr></td></tr>
+<tr align=right><td><font face="tahoma" size=2>(C) <a href="http://down.boomworks.org/">BoomWorks.Org</a>, Since 1999. All Rights Reserved.</font></td></tr>
+</table>
+
+</body>
+</html>
