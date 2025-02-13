@@ -1,0 +1,27 @@
+private readonly TimeSpan startTime = new TimeSpan(9, 0, 0);
+    private readonly TimeSpan endTime = new TimeSpan(19, 0, 0);
+ private bool CheckTime()
+    {
+        DateTime now = DateTime.Now;
+        TimeSpan currentTime = now.TimeOfDay;
+        return currentTime >= startTime && currentTime <= endTime;
+    }
+
+    private bool CheckToDay()
+    {
+        DateTime now = DateTime.Now;
+        DayOfWeek dayOfWeek = now.DayOfWeek;
+        return (dayOfWeek >= DayOfWeek.Monday && dayOfWeek <= DayOfWeek.Friday);
+    }
+
+    public bool TimeLock()
+    {
+        if (CheckToDay())
+        {
+            return !CheckTime();
+        }
+        else
+        {
+            return true;
+        }
+    }
